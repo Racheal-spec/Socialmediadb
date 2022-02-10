@@ -6,7 +6,7 @@ import { CardData, overviewData } from "../Data/CardData";
 const Home = () => {
  
     const Wrapper = styled.div`
-      padding: 60px 150px;
+      padding: 30px 80px;
 `
     const TitleWrapper = styled.div`
         display: flex;
@@ -19,8 +19,20 @@ const Home = () => {
  `
  const CardDiv = styled.div`
      width: 100%;
-     display: flex;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-gap: 20px;
      padding: 30px 0;
+ `
+ const Section2 = styled.section`
+     padding: 25px 0;
+ `
+ const Card2Div = styled.div`
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-gap: 20px;
+     padding: 30px 0;
+     width: 100%;
  `
     return(
       <Wrapper>
@@ -42,16 +54,19 @@ const Home = () => {
                 ))
             }
           </CardDiv>
-          <section>
-              <div>
-                  <h3>Overview- Today</h3>
-              </div>
+
+         <Section2>
+         <div>
+            <h3>Overview- Today</h3>
+            </div>
+          <Card2Div>
             {
                 overviewData.map((item) => (
-                    <Card2 key={item.id} id={item.id} title={item.title} icon={item.icon} counts={item.counts} precent={item.percent} />
+                    <Card2 key={item.id} id={item.id} title={item.title} icon={item.icon} counts={item.counts} percent={item.percent} arrow={item.arrow} primarycolor={item.primarycolor}/>
                 ))
             }
-          </section>
+          </Card2Div>
+         </Section2>
       </Wrapper>
     )
 }

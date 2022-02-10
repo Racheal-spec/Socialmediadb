@@ -49,57 +49,73 @@ export const overviewData = [
         id: 12,
         title: "Page Views",
         icon: facebook,
-        counts: 87,
-        percent: "3%"
+        counts: '87',
+        percent: "3%",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 15,
         title: "Likes",
         icon: facebook,
         counts: '52',
-        percent: "2%"
+        percent: "2%",
+        arrow: icondown,
+        primarycolor: "red",
     },
     {
         id: 22,
         title: "Likes",
         icon: instagram,
         counts: '5462',
-        percent: "2257%"
+        percent: "2257%",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 29,
         title: "Profile Views",
         icon: facebook,
         counts: "52k",
-        percent: "1375%"
+        percent: "1375%",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 122,
         title: "Retweets",
         icon: twitter,
         counts: "117",
-        percent: "303%"
+        percent: "303%",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 452,
         title: "Likes",
         icon: twitter,
         counts: "507",
-        percent: "553%"
+        percent: "553%",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 543,
         title: "Likes",
         icon: youtube,
         counts: "107",
-        percent: "19%"
+        percent: "19%",
+        arrow: icondown,
+        primarycolor: "red",
     },
     {
         id: 23,
         title: "Total Views",
         icon: youtube,
-        counts: 1407,
-        percent: "12%"
+        counts: "1407",
+        percent: "12%",
+        arrow: icondown,
+        primarycolor: "red",
     },
 
 ]

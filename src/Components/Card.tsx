@@ -14,12 +14,15 @@ const Card: React.FC<Cardprops>= ({id,icon,profilename, followers,today, arrow, 
     
     const Cardwrapper = styled.div`
         background-color:#252a41;
-        width: 28%;
+        width: 100%;
         height: 200px;
         color: #63687e;
         margin: 0 10px;
        box-shadow: 1px 1px 1px #222222;
        border-radius: 6px;
+       &:hover{
+           background-color: #40486d;
+       }
     `
     const NameDiv = styled.div`
         display: flex;
@@ -35,16 +38,20 @@ const Card: React.FC<Cardprops>= ({id,icon,profilename, followers,today, arrow, 
     const Text = styled.p`
         font-weight: bold;
         margin: 0 10px;
+        color: #8f91ba;
+
     `
     const Followers = styled.p`
         font-size: 3rem;
         color: white;
+        font-weight: bold;
     `
     const SpanText = styled.span`
         text-transform: uppercase;
         font-size: 11px;
         letter-spacing: 4px;
         font-weight: bold;
+        color: #8f91ba;
     `
     const TodayStyle = styled.div`
         display: flex;
