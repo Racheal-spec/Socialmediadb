@@ -2,14 +2,18 @@ import facebook from '../images/icon-facebook.svg';
 import instagram from '../images/icon-instagram.svg';
 import twitter from '../images/icon-twitter.svg';
 import youtube from '../images/icon-youtube.svg';
+import iconUp from '../images/icon-up.svg';
+import icondown from '../images/icon-down.svg';
 
 export const CardData = [
     {
         id: 1,
         icon: facebook,
         profilename: '@nathanf',
-        followers: 1987,
-        today: 12,
+        followers: "1987",
+        today: "12",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 2,
@@ -17,6 +21,8 @@ export const CardData = [
         profilename: '@nathanf',
         followers: '1044',
         today: '99',
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 3,
@@ -24,6 +30,8 @@ export const CardData = [
         profilename: '@realnathanf',
         followers: "11k",
         today: "1099",
+        arrow: iconUp,
+        primarycolor: "green",
     },
     {
         id: 4,
@@ -31,6 +39,8 @@ export const CardData = [
         profilename: '@Nathan F',
         followers: '8239',
         today: '144',
+        arrow: icondown,
+        primarycolor: "red",
     },
 ]
 

@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './Pages/Home';
+import { Globalcss } from './Styles/global';
 
-function App() {
+const App:React.FC = () => {
   return (
+    <>
+    <Globalcss />
     <div className="App">
-       <h2>Social Media App</h2>
+       <Home />
     </div>
+    </>
   );
 }
 
