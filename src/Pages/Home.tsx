@@ -29,7 +29,7 @@ const Home:React.FC<typeProps> = ({toggleHandler}) => {
                         checked={
                             window.localStorage.getItem('theme') === 'light'
                         }
-                        onChange={() => false}
+                        onChange={() => true}
                         onClick={toggleHandler}
                       />
                       <SwitchSpan></SwitchSpan>
