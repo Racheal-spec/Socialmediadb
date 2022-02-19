@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "../Components/Card";
 import Card2 from "../Components/Card2";
@@ -10,18 +10,7 @@ export interface typeProps {
   }
 
 const Home:React.FC<typeProps> = ({toggleHandler}) => {
- 
 
-  const[checked, setChecked] = useState(false);
-
-  const handleChecked = (e: ChangeEvent<HTMLInputElement>) =>{
-    
-    setChecked(e.target.checked);
-    toggleHandler();
-   
-  }
-
-  
     return(
       <Wrapper>
           <TitleWrapper>
@@ -31,15 +20,17 @@ const Home:React.FC<typeProps> = ({toggleHandler}) => {
               </div>
               <ToggleWrapper>
                   <SwitchText >
-                      {checked ? "Dark Mode on" : "Dark Mode off"}
+                      Dark Mode
                       </SwitchText> 
                 
                    <SwitchLabel>
                       <SwitchInput 
                         type="checkbox"
-                        checked={checked}
-                        onChange={handleChecked}
-                       
+                        checked={
+                            window.localStorage.getItem('theme') === 'light'
+                        }
+                        onChange={() => false}
+                        onClick={toggleHandler}
                       />
                       <SwitchSpan></SwitchSpan>
                   </SwitchLabel>
@@ -78,6 +69,9 @@ export default Home;
 //-------------------STYLES--------------------
 const Wrapper = styled.div`
   padding: 30px 80px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `
 const TitleWrapper = styled.div`
     display: flex;
@@ -85,14 +79,20 @@ const TitleWrapper = styled.div`
     justify-content: space-between;
 `
  const Total = styled.h5`
-  margin: 10px 0;
+  margin: 10px;
   color: #8f91ba;
 `
 const HeadingH2 = styled.h2`
  color: ${({theme}) => theme.color};
+ margin-left: 10px;
+ @media (max-width: 768px) {
+    font-size: 15px;
+  }
+ 
 `
 const HeadingH3 = styled.h3`
  color: ${({theme}) => theme.color};
+ margin-left: 10px;
 `
 const CardDiv = styled.div`
  width: 100%;
@@ -100,6 +100,10 @@ const CardDiv = styled.div`
  grid-template-columns: 1fr 1fr 1fr 1fr;
  grid-gap: 20px;
  padding: 30px 0;
+ @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
 `
 const Section2 = styled.section`
  padding: 25px 0;
@@ -110,6 +114,10 @@ const Card2Div = styled.div`
  grid-gap: 20px;
  padding: 30px 0;
  width: 100%;
+ @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
 `
 const ToggleWrapper = styled.div`
  display: flex;
@@ -131,8 +139,8 @@ left: 0;
 right: 0;
 bottom: 0;
 background-color: #ccc;
--webkit-transition: 300ms all;
-transition: 300ms all;
+-webkit-transition: 500ms all;
+transition: 500ms all;
 border-radius: 30px;
 &:before {
 position: absolute;
@@ -142,8 +150,8 @@ width: 17px;
 left: 5px;
 top: 50%;
 background-color: white;
--webkit-transition: 300ms all;
-transition: 300ms all;
+-webkit-transition: 500ms all;
+transition: 500ms all;
 border-radius: 20px;
 transform: translate(0, -50%);
 },

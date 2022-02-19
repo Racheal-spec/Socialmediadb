@@ -57,6 +57,9 @@ border-radius: 6px;
 &:hover{
    background-color: ${({theme}) => theme.cardhover};
 }
+@media (max-width: 768px) {
+    margin: 0;
+  }
 `
 const NameDiv = styled.div`
 display: flex;

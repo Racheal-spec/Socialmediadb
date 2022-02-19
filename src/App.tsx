@@ -3,21 +3,15 @@ import { ThemeProvider } from 'styled-components';
 import Home from './Pages/Home';
 import { Globalcss } from './Styles/global';
 import { LightTheme, DarkTheme } from './Themes';
+import { useTheme } from './Hooks/UseTheme';
 
 
-const App:React.FC = () => {
+const App:React.FC= () => {
 
-  const [apptheme, setAppTheme] = useState(false);
-
-   const toggleHandler = () => {
-     
-     apptheme === true ? setAppTheme(true) : setAppTheme(false);
-   }
-
-   
+   const{theme, toggleHandler} = useTheme();   
 
   return (
-    <ThemeProvider theme={apptheme === true ? LightTheme : DarkTheme}>
+    <ThemeProvider theme={theme === 'dark' ? LightTheme : DarkTheme}>
     <Globalcss />
     <div className="App">
        <Home toggleHandler={toggleHandler}/>
