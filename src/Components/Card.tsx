@@ -12,57 +12,15 @@ interface Cardprops {
 
 const Card: React.FC<Cardprops>= ({id,icon,profilename, followers,today, arrow, primarycolor}) => {
     
-    const Cardwrapper = styled.div`
-        background-color:#252a41;
-        width: 100%;
-        height: 200px;
-        color: #63687e;
-        margin: 0 10px;
-       box-shadow: 1px 1px 1px #222222;
-       border-radius: 6px;
-       &:hover{
-           background-color: #40486d;
-       }
-    `
-    const NameDiv = styled.div`
-        display: flex;
-        padding: 10px 0;
-    `
-    const InnerWrapper = styled.div`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 20px 0;
-    `
-    const Text = styled.p`
-        font-weight: bold;
-        margin: 0 10px;
-        color: #8f91ba;
-
-    `
-    const Followers = styled.p`
-        font-size: 3rem;
-        color: white;
-        font-weight: bold;
-    `
-    const SpanText = styled.span`
-        text-transform: uppercase;
-        font-size: 11px;
-        letter-spacing: 4px;
-        font-weight: bold;
-        color: #8f91ba;
-    `
     const TodayStyle = styled.div`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 30px;
-        font-size: 11px;
-        font-weight: bold;
-        color: ${primarycolor === "green" ? "#1db489" : "#dc414c"};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 11px;
+    font-weight: bold;
+    color: ${primarycolor === "green" ? "#1db489" : "#dc414c"};
     `
-    
     return(
           <Cardwrapper key={id}>
              <InnerWrapper>
@@ -88,3 +46,44 @@ const Card: React.FC<Cardprops>= ({id,icon,profilename, followers,today, arrow, 
 }
 
 export default Card;
+
+const Cardwrapper = styled.div`
+background-color: ${({theme}) => theme.cardbg};
+width: 100%;
+height: 200px;
+margin: 0 10px;
+box-shadow: 1px 1px 1px ${({theme}) => theme.shadow};
+border-radius: 6px;
+&:hover{
+   background-color: ${({theme}) => theme.cardhover};
+}
+`
+const NameDiv = styled.div`
+display: flex;
+padding: 10px 0;
+`
+const InnerWrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 20px 0;
+`
+const Text = styled.p`
+font-weight: bold;
+margin: 0 10px;
+color: ${({theme}) => theme.cardtext};
+`
+const Followers = styled.p`
+font-size: 3rem;
+color: ${({theme}) => theme.numcolor};
+font-weight: bold;
+`
+const SpanText = styled.span`
+text-transform: uppercase;
+font-size: 11px;
+letter-spacing: 4px;
+font-weight: bold;
+color: ${({theme}) => theme.cardtext}};
+`
+

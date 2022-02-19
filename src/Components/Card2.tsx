@@ -11,47 +11,12 @@ interface Card2props {
 }
 
 const Card2: React.FC<Card2props> = ({id,title,icon,counts,percent, arrow, primarycolor}) => {
-
-    const Cardwrapper = styled.div`
-    background-color:#252a41;
-    width: 100%;
-    height: 150px;
-    color: #63687e;
-    margin: 0 10px;
-   box-shadow: 1px 1px 1px #222222;
-   border-radius: 6px;
-   &:hover{
-           background-color: #40486d;
-       }
-`
-    const Innerwrapper = styled.div`
-        padding: 0 20px;
-    `
-    const Row1 = styled.div`
-         display: flex;
-         align-items: center;
-        justify-content: space-between;
-        padding: 20px 0;
-    `
-       const Row2 = styled.div`
-       display: flex;
-       align-items: center;
-      justify-content: space-between;
-      padding: 20px 0;
+    const Percentdiv = styled.div`
+    display: flex;
+    align-items: center;
+    color: ${primarycolor === "green" ? "#1db489" : "#dc414c"};
   `
-   const Counts = styled.p`
-   color: white;
-   font-size: 2rem;
-   font-weight: bold;
-`
-const Percentdiv = styled.div`
-  display: flex;
-  align-items: center;
-  color: ${primarycolor === "green" ? "#1db489" : "#dc414c"};
-`
-const Text = styled.h5`
-      color: #8f91ba;
- `
+    
     return(
         <Cardwrapper>
             <Innerwrapper>
@@ -80,3 +45,38 @@ const Text = styled.h5`
 }
 
 export default Card2;
+
+const Cardwrapper = styled.div`
+    background-color: ${({theme}) => theme.cardbg};
+    width: 100%;
+    height: 150px;
+    margin: 0 10px;
+   box-shadow:  1px 1px 1px ${({theme}) => theme.shadow};
+   border-radius: 6px;
+   &:hover{
+           background-color: ${({theme}) => theme.cardhover};
+       }
+`
+    const Innerwrapper = styled.div`
+        padding: 0 20px;
+    `
+    const Row1 = styled.div`
+         display: flex;
+         align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+    `
+       const Row2 = styled.div`
+       display: flex;
+       align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+  `
+   const Counts = styled.p`
+   color: ${({theme}) => theme.numcolor};
+   font-size: 2rem;
+   font-weight: bold;
+`
+const Text = styled.h5`
+      color: #8f91ba;
+ `
