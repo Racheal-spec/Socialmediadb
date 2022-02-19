@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Card from "../Components/Card";
 import Card2 from "../Components/Card2";
